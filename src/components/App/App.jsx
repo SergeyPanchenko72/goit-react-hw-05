@@ -1,26 +1,19 @@
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.module.css";
 import HomePage from "../../pages/HomePage/HomePage";
 import MoviesPage from "../../pages/MoviesPage/MoviesPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import Layout from "../Layout/Layout";
 
 function App() {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/movies">Movies</NavLink>
-          </li>
-        </ul>
-      </nav>
+    <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </>
+    </Layout>
   );
 }
 

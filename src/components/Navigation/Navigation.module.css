@@ -1,0 +1,14 @@
+.navigation {
+  display: flex;
+  gap: 24px;
+  padding: 12px;
+}
+
+.link {
+  color: blue;
+  text-decoration: none;
+  padding: 8px;
+}
+.active {
+  border-bottom: 2px solid blue;
+}
