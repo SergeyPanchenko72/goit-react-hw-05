@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchDetailsFilm } from "../../api";
 import css from "./MovieDetailsPage.module.css";
+import Loader from "../../components/Loader/Loader";
+import Error from "../../components/Error/Error";
 
 export default function MovieDetailsPage() {
   const { moviesId } = useParams();
@@ -48,7 +50,8 @@ export default function MovieDetailsPage() {
         </NavLink>
       </div>
       <div>
-        {loading && <b>Loading details films...</b>}
+        {loading && <Loader />}
+        {error && <Error />}
         {detailsFilm && (
           <div className={css.details}>
             <img

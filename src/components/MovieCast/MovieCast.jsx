@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieCast } from "../../api";
 import css from "./MovieCast.module.css";
+import Loader from "../Loader/Loader";
+import Error from "../Error/Error";
 
 export default function MovieCast() {
   const { moviesId } = useParams();
@@ -27,7 +29,8 @@ export default function MovieCast() {
 
   return (
     <div>
-      {loading && <b>Loading details films...</b>}
+      {loading && <Loader />}
+      {error && <Error />}
       {movieCast.length > 0 && (
         <div>
           <ul className={css.container}>

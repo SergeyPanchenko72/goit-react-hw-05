@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchTrendingFilms } from "../../api";
 import TrendingFilmsList from "../../components/TrendingFilmsList/TrendingFilmsList";
+import Loader from "../../components/Loader/Loader";
+import Error from "../../components/Error/Error";
 
 export default function HomePage() {
   const [trendingFilms, setTrendingFilms] = useState([]);
@@ -25,7 +27,8 @@ export default function HomePage() {
   console.log("trendingFilms= ", trendingFilms);
   return (
     <div>
-      {loading && <b>Loading trending films...</b>}
+      {loading && <Loader />}
+      {error && <Error />}
       {trendingFilms.length > 0 && (
         <TrendingFilmsList trendingFilms={trendingFilms} />
       )}

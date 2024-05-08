@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchMovieReviews } from "../../api";
 import css from "./MovieReviews.module.css";
 import Loader from "../Loader/Loader";
+import Error from "../Error/Error";
 
 export default function MovieRevievs() {
   const { moviesId } = useParams();
@@ -27,7 +28,7 @@ export default function MovieRevievs() {
   return (
     <div>
       {loading && <Loader />}
-
+      {error && <Error />}
       {movieRewiews.length === 0 && <p>Sorry. No reviews for this movie.</p>}
       <ul>
         {movieRewiews.map(({ id, author, content }) => (
