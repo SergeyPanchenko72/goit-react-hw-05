@@ -1,0 +1,47 @@
+.container {
+  margin: 40px 0;
+}
+
+.backLink {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.backLink:hover {
+  border-color: aquamarine;
+}
+.details {
+  display: flex;
+  gap: 24px;
+  color: white;
+  margin-bottom: 40px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+.ganres {
+  display: flex;
+  gap: 24px;
+}
+.linkDetails {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.listDetails {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0;
+}
+.linkDetails:hover {
+  border-color: aquamarine;
+}
