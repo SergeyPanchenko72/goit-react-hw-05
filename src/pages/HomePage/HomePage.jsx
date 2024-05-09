@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchTrendingFilms } from "../../api";
-import TrendingFilmsList from "../../components/TrendingFilmsList/TrendingFilmsList";
+import TrendingFilmsList from "../../components/FilmsList/FilmsList";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
 
@@ -24,7 +24,7 @@ export default function HomePage() {
     }
     getTrendingFilms();
   }, []);
-  console.log("trendingFilms= ", trendingFilms);
+
   return (
     <div>
       {loading && <Loader />}

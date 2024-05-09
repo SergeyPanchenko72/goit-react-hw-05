@@ -29,6 +29,22 @@ export const fetchMovieCast = async (id) => {
 
 export const fetchMovieReviews = async (id) => {
   const response = await axios.get(`/movie/${id}/reviews`, options);
-  console.log(response.data.results);
+  return response.data.results;
+};
+
+export const fetchMovies = async (query) => {
+  const response = await axios.get("/search/movie", {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YTU4NDM2OWU4OTA2ZDFlODk5ZTA4Mjk0OTE2ZGU0ZiIsInN1YiI6IjY2MzUzMjY5NjYxMWI0MDEyYTY3MzY4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Utb9yfYe1QxWushFqHVrjqUvYylhJ5K3qrX0nzVj_qk",
+    },
+    params: {
+      query: query,
+      include_adult: false,
+      language: "en-US",
+      page: 1,
+    },
+  });
+
   return response.data.results;
 };

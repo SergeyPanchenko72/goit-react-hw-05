@@ -55,7 +55,11 @@ export default function MovieDetailsPage() {
         {detailsFilm && (
           <div className={css.details}>
             <img
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                  : "https://img.freepik.com/free-photo/view-3d-camera_23-2150866009.jpg?t=st=1715141854~exp=1715145454~hmac=0752668649282940ba1253f94772c310724126481bd45c98fb6f2f2c0e19a4a7&w=360"
+              }
               alt={title}
               width="400"
             />

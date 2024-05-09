@@ -10,6 +10,7 @@ export default function MovieRevievs() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [movieRewiews, setMovieReviews] = useState([]);
+
   useEffect(() => {
     async function getMovieCast() {
       try {

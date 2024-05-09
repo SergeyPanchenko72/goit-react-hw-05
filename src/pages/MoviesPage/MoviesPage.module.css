@@ -1,0 +1,19 @@
+.searchForm {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 40px 0;
+}
+.searchInput {
+  width: 350px;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  padding: 8px;
+}
+.searchButton {
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  padding: 8px 24px;
+}
