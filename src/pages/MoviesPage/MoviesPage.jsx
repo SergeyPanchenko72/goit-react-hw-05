@@ -5,12 +5,14 @@ import FilmsList from "../../components/FilmsList/FilmsList";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
 import css from "./MoviesPage.module.css";
+import { useSearchParams } from "react-router-dom";
 
 export default function MoviesPage() {
   const [searchMovies, setSearchMovies] = useState([]);
-  const [searchParams, setSearchParams] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const moviesQuery = searchParams.get("query") ?? "";
 
   const handleSubmit = (values, action) => {
     setSearchParams(values);
@@ -21,7 +23,7 @@ export default function MoviesPage() {
       try {
         setLoading(true);
         setError(false);
-        const data = await fetchMovies(searchParams.query);
+        const data = await fetchMovies(moviesQuery);
         setSearchMovies(data);
       } catch (error) {
         setError(true);
